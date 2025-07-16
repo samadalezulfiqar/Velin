@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- ✅ Firebase (MUST be before your script.js) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"></script>
+
+  <!-- ✅ Service Worker for installable PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Velin</h1>
+      <button id="themeToggle">🌙</button>
+    </header>
+
+    <!-- ✅ Login/Register -->
+    <div class="screen" id="authScreen">
+      <h2>Welcome to Velin</h2>
+      <input type="email" id="emailInput" placeholder="Email" />
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <button onclick="signIn()">Sign In</button>
+      <p>or</p>
+      <button onclick="signUp()">Create Account</button>
+    </div>
+
+    <!-- ✅ Main Chat Area -->
+    <div class="screen hidden" id="mainScreen">
+      <div class="top-bar">
+        <input type="text" id="waveName" placeholder="Join or create a wave" />
+        <button onclick="joinWave()">Join</button>
+      </

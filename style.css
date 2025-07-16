@@ -1,0 +1,157 @@
+:root {
+  --bg: #f1f5f9;
+  --text: #111827;
+  --bubble-you: #1d4ed8;
+  --bubble-other: #e5e7eb;
+  --header: #1d4ed8;
+  --avatar-bg: #1e293b;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --bubble-you: #2563eb;
+  --bubble-other: #1e293b;
+  --header: #1d4ed8;
+  --avatar-bg: #334155;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: var(--header);
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+#themeToggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.screen {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  background: var(--header);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.top-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-label {
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+  opacity: 0.6;
+}
+
+.chat-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 10px;
+  background: rgba(0,0,0,0.02);
+  border-radius: 8px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background: var(--avatar-bg);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.bubble {
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.bubble.you {
+  background: var(--bubble-you);
+  color: white;
+  margin-left: auto;
+}
+
+.bubble.other {
+  background: var(--bubble-other);
+  color: var(--text);
+}
+
+.input-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
